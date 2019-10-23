@@ -1,0 +1,2 @@
+gcc -w -std=gnu99 -o PongViewGLinux PongViewGL.c -lm -lglut -lGL -lpthread
+
