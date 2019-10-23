@@ -1,37 +1,30 @@
 # Cosmic-Echoes
 
-See and hear the echoes from the universe.
+Game or Synthesizer?
 
-**See video demo [here](https://www.kadenze.com/users/zhe-zhang/portfolio_projects/ii-c8d45663-014f-412c-9de1-e0ea8bed9224).**
+<!-- **See video demo [here](https://www.kadenze.com/users/zhe-zhang/portfolio_projects/ii-c8d45663-014f-412c-9de1-e0ea8bed9224).** -->
 
-To run the patch, open *Cosmic Echoes.maxpat* in MAX.
+In this silly game, you use a remote sending OSC messages to the program, and playing it and making sounds.
 
-![patch](patch.png)
+![playing](playing.jpg)
 
-This is an imagination of throwing some voice, music or whatever you want into the universe, and you get some echo like things. Also, there is a device that detecting the wave form of what you get, displaying the cosmic light somehow colorful... Also, the location of the sound and the waveform you get is related to what you video device is capturing. Through the river of time, those sounds are traveling to you from light-years away.
+This project is an extension from the final coursework in the [Physics-Based Sound Synthesis for Games and Interactive Systems](https://www.kadenze.com/courses/physics-based-sound-synthesis-for-games-and-interactive-systems-iv/info) course of Stanford University. The sound engine is written in ChucK. I used several unit generators and STKs built in ChucK for the collision sound with kinds of physics model method implemented like Karplus-Strong algorithm. A physics engine is also built in for the movements of particles. 
 
-This patch is a large extension from the "Squiggle Animation" coursework in the [MAX course on Kadenze](https://www.kadenze.com/courses/programming-max-structuring-interactive-software-for-digital-arts-i/info). There are two interactive parts. One is based on the audio input while another is based on the video input. Then the two parts affects each other, modifying the parameters of another's processing, finally give you a feedback mixed them all.
+There is a square pad on the remote, TouchOSC in my case, and when you touch on the square, it will implant a "force source" to the corresponding location of the screen, and the force will pull all the balls towards to it. When your finger releases from the screen, the force then disappears. Since it is a multi-touch pad, you can implant 3 force source at most. Yhe sources also interact with each other, just like gravity in space.
 
-The patch gets the fundamental frequency whenever the input device detects a change in pitch, and then synthesizes a sine wave of that frequency, whose duration time is determined by the time it has waited for that change (also a limit set in case of a too long time). This gives a feeling of sound traveling through the time and space. Additionally, the pan of the sound is based on the horizontal centroid of the input video. And you could either load a music score for the synthesizer or play with whatever audio input device, talking to a built-in mic on the laptop for the simplest case.
+Below the xy-pad, There are two buttons and a knob. The knob controls damping in the space, also give a big reverb while damping is big. The left button is a randomizer, whenever you touch it, the balls got a new velocity. The right button is a brake, whenever you touch it, the balls stops moving for moment.
 
-For the video part, the choice is also on you whether you used your camera or you load a video clip to the patch. The patch would calculate the horizontal and vertical centroid of your video input. The horizontal centroid determines the pan of the sound as mentioned above. And the vertical centroid determines the vertical location of the sine wave to be drew down. Then, the input video and the sine waves are combined together through a absolute value difference operation.
+![game](game.png)
 
-![video mode](pre1.png)
+For the sound part, there are 5 different tones. First of all, the balls get their each timbre when colliding. The left bottle gives a flute sound, with pitch corresponding to the hit point. The right string acts as a two-string mandolin, and gets a wider pitch range. The top bar has 3 sine wave oscillators, acting as a pad with chord. And the bottom drum is a set of percussions. Additionally, the middle peg is a weired sticker, whenever the balls touch it, the time "stops" for a little while, while the reverb getting bigger and bigger, as if the sound wave is still propagating.
 
-![camera mode](pre2.png)
-
-Besides the input source of audio and video, there are also some parameters left to the player to change, affecting the visual effects of the final output. With these interacting with each other, we finally get some cosmos feeling on the video part and an echo like sound character on the audio part. And that is why I named this patch "Cosmic Echoes".
-
+And all the sounds is panned to the horizontal position of the collisions. So it would be more interesting(or more silly) if you use a headphone or stereo speakers.
 -------
 
 ## Credits
 
-* The audio and video input bpatchers are from the help patch within MAX.
+* The PongView framework based on OpenGL is written by Perry R. Cook: https://www.cs.princeton.edu/~prc/
 
-* The "mood_machine" patch are from the help patch within MAX.
+* Chuck and MiniAudicle: https://chuck.cs.princeton.edu/
 
-* The horizontal and vertical centroid patch credit to Matthew Wright.
-
-* The "draw-sine-squiggle.2" patch and "blip+squiggle" patch modified on the version of Matthew Wright.
-
-* The video clips are built-in ones from MAX.
+* TouchOSC and TouchOSC Editor: https://hexler.net/software/touchosc
