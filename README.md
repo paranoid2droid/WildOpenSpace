@@ -6,7 +6,7 @@ Game or Synthesizer?
 
 In this silly game, you use a remote sending OSC messages to the program, and playing it and making sounds.
 
-<div align=center>![playing](playing.jpg)</div>
+<div align="center">![playing](playing.jpg)</div>
 
 This project is an extension from the final coursework in the [Physics-Based Sound Synthesis for Games and Interactive Systems](https://www.kadenze.com/courses/physics-based-sound-synthesis-for-games-and-interactive-systems-iv/info) course of Stanford University. The sound engine is written in ChucK. I used several unit generators and STKs built in ChucK for the collision sound with kinds of physics model method implemented like Karplus-Strong algorithm. A physics engine is also built in for the movements of particles. 
 
