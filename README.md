@@ -6,7 +6,7 @@ Game or Synthesizer?
 
 In this silly game, you use a remote sending OSC messages to the program, and playing it and making sounds.
 
-<div align="center">![playing](playing.jpg)</div>
+![playing](playing.jpg)
 
 This project is an extension from the final coursework in the [Physics-Based Sound Synthesis for Games and Interactive Systems](https://www.kadenze.com/courses/physics-based-sound-synthesis-for-games-and-interactive-systems-iv/info) course of Stanford University. The sound engine is written in ChucK. I used several unit generators and STKs built in ChucK for the collision sound with kinds of physics model method implemented like Karplus-Strong algorithm. A physics engine is also built in for the movements of particles. 
 
@@ -14,7 +14,7 @@ There is a square pad on the remote, TouchOSC in my case, and when you touch on 
 
 Below the xy-pad, There are two buttons and a knob. The knob controls damping in the space, also give a big reverb while damping is big. The left button is a randomizer, whenever you touch it, the balls got a new velocity. The right button is a brake, whenever you touch it, the balls stops moving for moment.
 
-<div align=center>![game](game.png)</div>
+![game](game.png)
 
 For the sound part, there are 5 different tones. First of all, the balls get their each timbre when colliding. The left bottle gives a flute sound, with pitch corresponding to the hit point. The right string acts as a two-string mandolin, and gets a wider pitch range. The top bar has 3 sine wave oscillators, acting as a pad with chord. And the bottom drum is a set of percussions. Additionally, the middle peg is a weired sticker, whenever the balls touch it, the time "stops" for a little while, while the reverb getting bigger and bigger, as if the sound wave is still propagating.
 
