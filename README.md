@@ -2,7 +2,9 @@
 
 Game or Synthesizer?
 
-<!-- **See video demo [here](https://www.kadenze.com/users/zhe-zhang/portfolio_projects/ii-c8d45663-014f-412c-9de1-e0ea8bed9224).** -->
+**See video demo [here](https://youtu.be/HFvsDB2GHOs).**
+
+---------
 
 In this silly game, you use a remote sending OSC messages to the program, and playing it and making sounds.
 
